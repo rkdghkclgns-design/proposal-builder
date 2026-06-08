@@ -1,0 +1,16 @@
+{
+  "name": "proposal-builder",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "기획서 빌더 — Notion 스타일 상세 기획서 빌더 (문서 A4 + 슬라이드 16:9 자유 캔버스)",
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "python -m http.server 8000",
+    "serve:dist": "python -m http.server 8001 --directory dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.0",
+    "@babel/preset-react": "^7.25.0"
+  }
+}

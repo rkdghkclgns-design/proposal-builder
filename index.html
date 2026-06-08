@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>기획서 빌더</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#233148"/>
+    <rect x="30" y="22" width="40" height="56" rx="3" fill="#ffffff"/>
+    <rect x="37" y="34" width="26" height="4" rx="2" fill="#233148"/>
+    <rect x="37" y="44" width="20" height="3" rx="1.5" fill="#c2c8d0"/>
+    <rect x="37" y="52" width="26" height="2.5" rx="1.25" fill="#e4e7ec"/>
+    <rect x="37" y="58" width="26" height="2.5" rx="1.25" fill="#e4e7ec"/>
+    <rect x="37" y="64" width="18" height="2.5" rx="1.25" fill="#e4e7ec"/>
+  </svg>
+</template>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script src="src/store.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="src/numbering.js"></script>
+<script src="src/markdown.js"></script>
+<script type="text/babel" data-presets="react" src="src/icons.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/blocks.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/cover.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/toc.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/editor.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/paginate.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/slides.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/canvas-core.jsx"></script>
+<script src="src/exports.js"></script>
+<script type="text/babel" data-presets="react" src="src/canvas-elements.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/canvas-deck.jsx"></script>
+<script type="text/babel" data-presets="react" src="src/app.jsx"></script>
+</body>
+</html>
