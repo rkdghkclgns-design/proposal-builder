@@ -5,6 +5,8 @@
 
 > Claude Design 핸드오프 번들(`-B4FgHuSjs__GooBhYeZag`)을 작업 폴더로 그대로 구현한 결과물입니다.
 
+**🔗 라이브 데모: https://rkdghkclgns-design.github.io/proposal-builder/**
+
 ## 실행 방법
 
 이 앱은 브라우저에서 JSX를 변환(Babel standalone)하므로 **HTTP로 서빙해야** 합니다.
@@ -73,9 +75,14 @@ src/
   app.jsx           앱 셸(라이브러리·상단바·편집↔미리보기·undo/redo·PDF)
 ```
 
+## 빌드 & 배포
+
+- **로컬 개발** — `serve.bat`(또는 `npm run serve`)로 띄우면 **브라우저에서 Babel standalone**이 JSX를 즉석 변환합니다. 파일 수정 후 새로고침만 하면 반영됩니다(빌드 불필요).
+- **프로덕션 빌드** — `npm install && npm run build` → `build.mjs`가 JSX를 Babel로 **사전 컴파일**(전역 스코프 유지)하고 React 프로덕션 빌드로 바꿔 `dist/`에 정적 사이트를 생성합니다. 브라우저 Babel이 빠져 로딩이 빠릅니다.
+  - 빌드 결과 미리보기: `npm run serve:dist` → http://localhost:8001
+- **배포** — `main`에 push하면 **GitHub Actions**(`.github/workflows/deploy.yml`)가 빌드 후 **GitHub Pages**로 자동 배포합니다.
+
 ## 기술 메모
 
-- 빌드 단계 없이 **브라우저에서 Babel standalone** 으로 JSX를 변환합니다(프로토타입 방식).
-  파일 수정 후 새로고침만 하면 반영됩니다.
-- 프로덕션(번들링·빠른 로딩)이 필요하면 Vite + React로 마이그레이션할 수 있습니다.
-  (현재는 모듈이 전역 스코프를 공유하는 구조라, 마이그레이션 시 import/export 정리가 필요합니다.)
+- 모듈이 ES import/export 없이 **전역 스코프를 공유**하는 구조입니다(클래식 `<script>` 방식). 빌드는 이 의미를 그대로 유지한 채 JSX만 변환합니다.
+- 외부 의존성은 모두 CDN(React·pptxgenjs·html2canvas·Pretendard·Nanum Myeongjo)이며, 백엔드 없이 `localStorage`만 사용하는 완전한 클라이언트 앱입니다.
